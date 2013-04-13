@@ -8,6 +8,13 @@
 /parts/
 /ckeditor.db
 ve/
+build
 django-ckeditor.sublime-workspace
 django-ckeditor.sublime-project
 *.DS_Store
+.#*
+*.mo
+*.pyo
+*.py#
+*po~
+*INFO#
