@@ -18,3 +18,4 @@ django-ckeditor.sublime-project
 *.py#
 *po~
 *INFO#
+dist

@@ -12,6 +12,24 @@ import json
 
 json_encode = json.JSONEncoder().encode
 
+toolbar_Full = [
+        ['htmlSource', '-', 'Save', 'NewPage', 'Preview', '-', 'Templates'],
+        ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Print',    'SpellChecker', 'Scayt'],
+        ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
+        ['Form', 'Checkbox', 'Radio', 'TextField', 'Textarea', 'Select', 'Button', 'ImageButton', 'HiddenField'],
+        ['BidiLtr', 'BidiRtl'],
+        '/',
+        ['Bold', 'Italic', 'Underline', 'Strike', '-', 'Subscript', 'Superscript'],
+        ['NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', 'Blockquote', 'CreateDiv'],
+        ['JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock'],
+        ['Link', 'Unlink', 'Anchor'],
+        ['Image', 'Flash', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak'],
+        '/',
+        ['Styles', 'Format', 'Font', 'FontSize'],
+        ['TextColor', 'BGColor'],
+        ['Maximize', 'ShowBlocks', '-', 'About']
+]
+        
 DEFAULT_CONFIG = {
     'skin': 'moono',
     'toolbar_Basic': [
@@ -19,7 +37,7 @@ DEFAULT_CONFIG = {
     ],
     'toolbar_Full': [
         ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
-        ['Image', 'Flash', 'Table', 'HorizontalRule'],
+        ['Image', 'Flash', 'Table', 'HorizontalRule', '-', 'Syntaxhighlight'],
         ['TextColor', 'BGColor'],
         ['Smiley', 'SpecialChar'], ['Source'],
     ],
@@ -51,8 +69,8 @@ class CKEditorWidget(forms.Textarea):
     def __init__(self, config_name='default', *args, **kwargs):
         super(CKEditorWidget, self).__init__(*args, **kwargs)
         # Setup config from defaults.
-        # self.config = DEFAULT_CONFIG.copy()
-        self.config = {}
+        self.config = DEFAULT_CONFIG.copy()
+        # self.config = {}
 
         # Try to get valid config from settings.
         configs = getattr(settings, 'CKEDITOR_CONFIGS', None)
