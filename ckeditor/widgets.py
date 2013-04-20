@@ -11,8 +11,10 @@ import json
 
 
 json_encode = json.JSONEncoder().encode
-
-toolbar_Full = [
+        
+DEFAULT_CONFIG = {
+    'skin': 'moono',
+    'toolbar_Custom': [
         ['htmlSource', '-', 'Save', 'NewPage', 'Preview', '-', 'Templates'],
         ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Print',    'SpellChecker', 'Scayt'],
         ['Undo', 'Redo', '-', 'Find', 'Replace', '-', 'SelectAll', 'RemoveFormat'],
@@ -28,14 +30,8 @@ toolbar_Full = [
         ['Styles', 'Format', 'Font', 'FontSize'],
         ['TextColor', 'BGColor'],
         ['Maximize', 'ShowBlocks', '-', 'About']
-]
-        
-DEFAULT_CONFIG = {
-    'skin': 'moono',
-    'toolbar_Basic': [
-        ['Source', '-', 'Bold', 'Italic']
     ],
-    'toolbar_Full': [
+    'toolbar_Basic': [
         ['Styles', 'Format', 'Bold', 'Italic', 'Underline', 'Strike', 'SpellChecker', 'Undo', 'Redo'],
         ['Image', 'Flash', 'Table', 'HorizontalRule', '-', 'Syntaxhighlight'],
         ['TextColor', 'BGColor'],
